@@ -13,6 +13,7 @@
   "dependencies": {
     "@chakra-ui/vue": "^0.13.1",
     "@emotion/css": "^11.11.0",
+    "@vue/compiler-sfc": "^3.3.4",
     "@vueuse/components": "^10.1.2",
     "@vueuse/core": "^10.1.2",
     "axios": "^1.4.0",
