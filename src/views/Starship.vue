@@ -4,6 +4,7 @@ import { vInfiniteScroll } from '@vueuse/components';
 import { useDebounce } from '@vueuse/core';
 
 import { getStarships } from '../services/starship.service';
+import StarshipCard from '../components/StarshipCard.vue';
 
 const isFetchingMoreData = ref(null);
 const isFetchingData = ref(null);
@@ -52,7 +53,7 @@ const loadMoreStarship = async () => {
             <h1 class="text-white text-7xl font-semibold">Starship</h1>
 
             <input
-                class="block min-h-[auto] w-full rounded-xl border-0 bg-slate-500 px-3 py-2 leading-[1.6] transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary"
+                class="block min-h-[auto] w-full rounded-xl border-0 bg-slate-500 px-3 py-2 leading-[1.6] transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary focus:outline-none focus:outline-slate-50"
                 type="text"
                 placeholder="Search your starship..."
                 v-model="keyword"
@@ -62,21 +63,7 @@ const loadMoreStarship = async () => {
                 v-if="starships.results.length > 0"
                 class="w-full grid gap-x-8 gap-y-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             >
-                <div
-                    class="flex flex-col p-5 justify-center items-center gap-y-4 rounded-xl shadow-xl shadow-slate-40 bg-slate-700 text-white"
-                    v-for="ship in starships.results"
-                    v-bind:key="ship"
-                >
-                    <h1 class="text-6xl">🚀</h1>
-
-                    <h4 class="text-xl text-center">
-                        {{ ship.name }}
-                    </h4>
-
-                    <p class="text-center text-sm">
-                        <i>Manufacturer by</i> {{ ship.manufacturer }}
-                    </p>
-                </div>
+                <StarshipCard :data="starships" />
             </div>
 
             <p v-else-if="keyword && starships.results.length < 1" class="text-white italic">
