@@ -40,6 +40,7 @@ Open http://localhost:5173/ with your browser to see the result.
 
 
 **Mobile View:**
+
 <img width="494" alt="image" src="https://github.com/kikipratiwi/starship/assets/20922216/611f954d-f2c2-4cca-8043-ab5d3ce7da04">
 
 
