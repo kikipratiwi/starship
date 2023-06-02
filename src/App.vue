@@ -13,7 +13,11 @@ export default {
         <Startship />
 
         <template #fallback>
-            <p>Loading...</p>
+            <div
+                class="h-screen w-screen bg-slate-900 text-white text-xl flex items-center justify-center"
+            >
+                <i>Loading...</i>
+            </div>
         </template>
     </Suspense>
 </template>
