@@ -15,13 +15,13 @@ const selectedShip = ref({});
                 selectedShip = ship;
             }
         "
-        class="flex flex-col p-5 justify-center items-center gap-y-4 rounded-xl shadow-xl shadow-slate-40 bg-slate-700 text-white cursor-pointer"
+        class="flex flex-col p-5 justify-center items-center gap-y-3 rounded-xl shadow-xl shadow-slate-40 bg-slate-700 text-white cursor-pointer"
         v-for="ship in data.results"
         v-bind:key="ship"
     >
         <h1 class="text-6xl">🚀</h1>
 
-        <h4 class="text-xl text-center">
+        <h4 class="text-xl text-center font-semibold">
             {{ ship.name }}
         </h4>
 
@@ -67,7 +67,7 @@ const selectedShip = ref({});
 
                 <h1 class="text-8xl">🚀</h1>
 
-                <h4 class="text-4xl text-center">{{ selectedShip.name }}</h4>
+                <h4 class="text-4xl text-center font-semibold">{{ selectedShip.name }}</h4>
 
                 <p class="text-center">
                     <i>Manufacturer by </i>
@@ -77,7 +77,7 @@ const selectedShip = ref({});
                 <div
                     class="w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-x-10"
                 >
-                    <div class="flex flex-col gap-y-2 items-start px-2">
+                    <div class="flex flex-col gap-y-2 items-start px-2 flex-grow">
                         <span>Model: {{ selectedShip.model }}</span>
                         <span>Class: {{ selectedShip.starship_class }}</span>
                         <span>MGLT: {{ selectedShip.MGLT }}</span>
@@ -85,7 +85,7 @@ const selectedShip = ref({});
                         <span>Consumables: {{ selectedShip.consumables }}</span>
                     </div>
 
-                    <div class="flex flex-col gap-y-2 items-start px-2">
+                    <div class="flex flex-col gap-y-2 items-start px-2 w-auto">
                         <span>Passengers: {{ selectedShip.passengers }}</span>
                         <span>Crew: {{ selectedShip.crew }}</span>
                         <span>Capacity: {{ selectedShip.cargo_capacity }}</span>
