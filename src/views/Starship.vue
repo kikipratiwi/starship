@@ -4,7 +4,7 @@ import { vInfiniteScroll } from '@vueuse/components';
 import { useDebounce } from '@vueuse/core';
 
 import { getStarships } from '../services/starship.service';
-import StarshipCard from '../components/StarshipCard.vue';
+import StarshipList from '../components/StarshipList.vue';
 
 const isFetchingMoreData = ref(null);
 const isFetchingData = ref(null);
@@ -63,7 +63,7 @@ const loadMoreStarship = async () => {
                 v-if="starships.results.length > 0"
                 class="w-full grid gap-x-8 gap-y-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             >
-                <StarshipCard :data="starships" />
+                <StarshipList :data="starships" />
             </div>
 
             <p v-else-if="keyword && starships.results.length < 1" class="text-white italic">
